@@ -25,6 +25,7 @@ import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.Activities;
 import com.truman.trippy.api.entities.Activity;
 import com.truman.trippy.api.entities.Photo;
+import com.truman.trippy.api.entities.Size;
 
 public class ActivityFragment extends ListFragment{
 	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
@@ -98,13 +99,14 @@ public class ActivityFragment extends ListFragment{
 	                ImageView profile_image_view = (ImageView) convertView.findViewById(R.id.profile_image);
 	                ImageView activity_image_view = (ImageView) convertView.findViewById(R.id.activity_image);
 
-	             // Get singletone instance of ImageLoader
+	             // Get singleton instance of ImageLoader
 	                ImageLoader imageLoader = ImageLoader.getInstance();
 	                // Initialize ImageLoader with configuration. Do it once.
 	                imageLoader.init(ImageLoaderConfiguration.createDefault(getContext()));
 	                // Load and display image asynchronously
 	                imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view);
-	                imageLoader.displayImage(((Photo)photoMap.get(activity.getId())).getSizes()[1].getUrl(), activity_image_view);
+	                Size[] sizeArray = ((Photo)photoMap.get(activity.getId())).getSizes();
+	                imageLoader.displayImage(sizeArray[4].getUrl(), activity_image_view);
 
 	            }else if(group.equalsIgnoreCase("TRIP_PLACE")){
 	            	convertView = inflater.inflate(R.layout.menu_list_item, parent, false);

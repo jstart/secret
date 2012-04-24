@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import com.truman.trippy.api.entities.ActionData;
 import com.truman.trippy.api.entities.Activities;
 import com.truman.trippy.api.entities.BadgeSets;
-import com.truman.trippy.api.entities.Badges;
+import com.truman.trippy.api.entities.Trips;
 import com.truman.trippy.api.entities.Category;
 import com.truman.trippy.api.entities.Checkin;
 import com.truman.trippy.api.entities.CheckinGroup;
@@ -168,28 +168,28 @@ public class TrippyApi {
    * @return Badges entity wrapped in Result object
    * @throws TrippyApiException when something unexpected happens
    */
-  public Result<Badges> usersBadges(String userId) throws TrippyApiException {
-    try {
-      if (userId == null) {
-        userId = "self";
-      }
-      
-      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/badges", true);
-      Badges result = null;
-
-      if (response.getMeta().getCode() == 200) {
-        BadgeSets sets = (BadgeSets) JSONFieldParser.parseEntity(BadgeSets.class, response.getResponse().getJSONObject("sets"), this.skipNonExistingFields);
-        ActionData[] badges = (ActionData[]) JSONFieldParser.parseEntitiesHash(ActionData.class, response.getResponse().getJSONObject("badges"), this.skipNonExistingFields);
-        String defaultSetType = response.getResponse().getString("defaultSetType");
-        
-        result = new Badges(sets, badges, defaultSetType);
-      }
-
-      return new Result<Badges>(response.getMeta(), result);
-    } catch (JSONException e) {
-      throw new TrippyApiException(e);
-    }
-  }
+//  public Result<Trips> usersBadges(String userId) throws TrippyApiException {
+//    try {
+//      if (userId == null) {
+//        userId = "self";
+//      }
+//      
+//      ApiRequestResponse response = doApiRequest(Method.GET, "users/" + userId + "/badges", true);
+//      Trips result = null;
+//
+//      if (response.getMeta().getCode() == 200) {
+//        BadgeSets sets = (BadgeSets) JSONFieldParser.parseEntity(BadgeSets.class, response.getResponse().getJSONObject("sets"), this.skipNonExistingFields);
+//        ActionData[] badges = (ActionData[]) JSONFieldParser.parseEntitiesHash(ActionData.class, response.getResponse().getJSONObject("badges"), this.skipNonExistingFields);
+//        String defaultSetType = response.getResponse().getString("defaultSetType");
+//        
+//        result = new Trips(sets, badges, defaultSetType);
+//      }
+//
+//      return new Result<Trips>(response.getMeta(), result);
+//    } catch (JSONException e) {
+//      throw new TrippyApiException(e);
+//    }
+//  }
   
   /**
    * Returns a history of checkins for the authenticated user. 
@@ -1329,6 +1329,28 @@ public class TrippyApi {
     }
   }
   
+  /**
+   * Returns the settings of the acting user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/settings/all.html" target="_blank">https://developer.foursquare.com/docs/settings/all.html</a>
+   * 
+   * @return FBPermissions entity wrapped in Result object
+   * @throws TrippyApiException when something unexpected happens
+   */
+  public Result<Trips> myTrips(Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws TrippyApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/self/trips", false, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
+      Trips result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Trips) JSONFieldParser.parseEntity(Trips.class, response.getResponse().getJSONObject("trips"), this.skipNonExistingFields);
+      }
+
+      return new Result<Trips>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new TrippyApiException(e);
+    }
+  }
   /**
    * Comment on a checkin-in 
    *    

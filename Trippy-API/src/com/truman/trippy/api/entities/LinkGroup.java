@@ -5,14 +5,14 @@ package com.truman.trippy.api.entities;
  * 
  * @author Christopher Truman
  */
-public class LinkGroup extends Group<Link> {
+public class LinkGroup extends Group<Trip> {
 
   private static final long serialVersionUID = 9117692748314735095L;
 
   @Override
-  public Link[] getItems() {
+  public Trip[] getItems() {
     return items;
   }
 
-  private Link[] items;
+  private Trip[] items;
 }
