@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io
+END
+Method.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/Method.java
+END
+GAEIOHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/GAEIOHandler.java
+END
+MultipartParameter.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/MultipartParameter.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/package-info.java
+END
+IOHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/IOHandler.java
+END
+DefaultIOHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/DefaultIOHandler.java
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/io/Response.java
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications
+END
+MayorshipNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/MayorshipNotification.java
+END
+ScoreNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/ScoreNotification.java
+END
+TipNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/TipNotification.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/package-info.java
+END
+Notification.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/Notification.java
+END
+NotificationType.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/NotificationType.java
+END
+BadgeNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/BadgeNotification.java
+END
+MessageNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/MessageNotification.java
+END
+TipAlertNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/TipAlertNotification.java
+END
+LeaderboardNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/notifications/LeaderboardNotification.java
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/package-info.java
+END
+FoursquareApiException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/FoursquareApiException.java
+END
+ResultMeta.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/ResultMeta.java
+END
+FoursquareApi.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/FoursquareApi.java
+END
+NotificationsParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/NotificationsParser.java
+END
+FoursquareEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/FoursquareEntity.java
+END
+JSONFieldParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/JSONFieldParser.java
+END
+Result.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/Result.java
+END

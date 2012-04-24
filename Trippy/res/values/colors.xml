@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <color name="divider">#5e5e5e</color>
+ <color name="menu_list_item_bg">#333333</color>
+ <color name="name_bg">#aaaaaa</color>
+ 
+</resources>

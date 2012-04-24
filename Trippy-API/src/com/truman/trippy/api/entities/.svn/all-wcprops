@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities
+END
+LeaderboardScore.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/LeaderboardScore.java
+END
+LeaderboardItemGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/LeaderboardItemGroup.java
+END
+Source.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Source.java
+END
+KeywordGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/KeywordGroup.java
+END
+Badge.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Badge.java
+END
+Comment.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Comment.java
+END
+CompactTip.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompactTip.java
+END
+ReasonGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/ReasonGroup.java
+END
+Warning.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Warning.java
+END
+Category.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Category.java
+END
+Setting.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Setting.java
+END
+UserGroups.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/UserGroups.java
+END
+RecommendationGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/RecommendationGroup.java
+END
+CheckinGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CheckinGroup.java
+END
+VenueHistoryGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/VenueHistoryGroup.java
+END
+Recommended.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Recommended.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/package-info.java
+END
+Keyword.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Keyword.java
+END
+Mayor.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Mayor.java
+END
+SizeGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/SizeGroup.java
+END
+Count.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Count.java
+END
+Photo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Photo.java
+END
+VenuesSearchResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/VenuesSearchResult.java
+END
+Contact.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Contact.java
+END
+Group.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Group.java
+END
+SpecialGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/SpecialGroup.java
+END
+Link.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Link.java
+END
+MiniVenue.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/MiniVenue.java
+END
+VenueGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/VenueGroup.java
+END
+BadgeSets.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/BadgeSets.java
+END
+VenueHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/VenueHistory.java
+END
+Recommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Recommendation.java
+END
+Checkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Checkin.java
+END
+BadgeImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/BadgeImage.java
+END
+Todo.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Todo.java
+END
+PhotoGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/PhotoGroup.java
+END
+CompleteUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompleteUser.java
+END
+HereNow.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/HereNow.java
+END
+LinkProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/LinkProvider.java
+END
+Location.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Location.java
+END
+TipGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/TipGroup.java
+END
+CompleteSpecial.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompleteSpecial.java
+END
+Size.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Size.java
+END
+LinkGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/LinkGroup.java
+END
+CompleteVenue.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompleteVenue.java
+END
+Photos.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Photos.java
+END
+BadgeUnlock.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/BadgeUnlock.java
+END
+BadgeSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/BadgeSet.java
+END
+Tips.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Tips.java
+END
+CommentGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CommentGroup.java
+END
+TodoGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/TodoGroup.java
+END
+LeaderboardItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/LeaderboardItem.java
+END
+Badges.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Badges.java
+END
+CompleteTip.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompleteTip.java
+END
+CompactUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompactUser.java
+END
+VenuesAutocompleteResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/VenuesAutocompleteResult.java
+END
+Reason.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Reason.java
+END
+CompactVenue.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/CompactVenue.java
+END
+UserGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/UserGroup.java
+END
+Stats.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Stats.java
+END
+Scores.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/262/foursquare-api/src/main/java/fi/foyt/foursquare/api/entities/Scores.java
+END
