@@ -1,6 +1,7 @@
 package com.truman.trippy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
@@ -23,15 +24,17 @@ import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.Activities;
 import com.truman.trippy.api.entities.Activity;
+import com.truman.trippy.api.entities.Photo;
 
 public class ActivityFragment extends ListFragment{
 	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
 	ArrayAdapter<Activity> adapter;
-	class ActivityFeedTask extends AsyncTask<Void, Void, Result<Activities>>{
+	HashMap<String, Photo> photoMap = new HashMap<String, Photo>();
+	class ActivityFeedTask extends AsyncTask<Void, Void, HashMap<String, Object>>{
 
-    	protected Result<Activities> doInBackground(Void... params) {
+    	protected HashMap<String, Object> doInBackground(Void... params) {
             TrippyApi api = new TrippyApi();
-            Result<Activities> set = null;
+            HashMap<String, Object> set = null;
 
             try {
                 set = api.activityFeed(null, 20, 0, null, null);
@@ -41,14 +44,15 @@ public class ActivityFragment extends ListFragment{
     		}        
     		return set;
     	}
-    	protected void onPostExecute(Result<Activities> result) {
+    	protected void onPostExecute(HashMap<String, Object> result) {
     		// TODO Auto-generated method stub
     		super.onPostExecute(result);
-    		Activity[] list = result.getResult().getActivities();
+    		Activity[] list = ((Result<Activities>)result.get("Activities")).getResult().getActivities();
     			for (int i = 0; i < list.length; i++){
     				mActivityList.add(list[i]);
     			}
     			adapter.notifyDataSetChanged();
+    			photoMap = ((HashMap<String, Photo>)result.get("Photos"));
     		}
     }
 	@Override
@@ -100,7 +104,7 @@ public class ActivityFragment extends ListFragment{
 	                imageLoader.init(ImageLoaderConfiguration.createDefault(getContext()));
 	                // Load and display image asynchronously
 	                imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view);
-	                imageLoader.displayImage(activity.getUser().getImageSource(), activity_image_view);
+	                imageLoader.displayImage(((Photo)photoMap.get(activity.getId())).getSizes()[1].getUrl(), activity_image_view);
 
 	            }else if(group.equalsIgnoreCase("TRIP_PLACE")){
 	            	convertView = inflater.inflate(R.layout.menu_list_item, parent, false);

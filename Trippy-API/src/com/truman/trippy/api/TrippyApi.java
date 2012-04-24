@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -1338,7 +1339,7 @@ public class TrippyApi {
    * @return Comment entity wrapped in Result object
    * @throws TrippyApiException when something unexpected happens
    */
-  public Result<Activities> activityFeed(String tripId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws TrippyApiException {
+  public HashMap<String,Object> activityFeed(String tripId, Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws TrippyApiException {
     try {
     	if(tripId == null){
     		tripId = "GLOBAL";
@@ -1349,14 +1350,23 @@ public class TrippyApi {
     	if (offset == null){
     		offset = 0;
     	}
+    HashMap<String,Object> result = new HashMap<String,Object>();
       ApiRequestResponse response = doApiRequest(Method.GET, "trips/" + tripId + "/feed", true, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
-      Activities result = null;
-
+      Activities activities = null;
+      HashMap<String,Photo> photoResult = new HashMap<String,Photo>();
       if (response.getMeta().getCode() == 200) {
-        result = (Activities) JSONFieldParser.parseEntity(Activities.class, response.getResponse().getJSONObject("activities"), this.skipNonExistingFields);
+    	activities = (Activities) JSONFieldParser.parseEntity(Activities.class, response.getResponse().getJSONObject("activities"), this.skipNonExistingFields);
+        JSONArray array = response.getResponse().getJSONObject("activities").getJSONArray("items");
+        for (int i = 0; i< array.length(); i++){
+        	JSONObject object = array.getJSONObject(i);
+        	if (object.has("photo")){
+        		photoResult.put(object.getString("id"), (Photo) JSONFieldParser.parseEntity(Photo.class, object.getJSONObject("photo"), this.skipNonExistingFields));
+        	}
+        }
       }
-
-      return new Result<Activities>(response.getMeta(), result);
+      result.put("Activities", new Result<Activities>(response.getMeta(), activities));
+      result.put("Photos", photoResult);
+      return result;
     } catch (JSONException e) {
       throw new TrippyApiException(e);
     }

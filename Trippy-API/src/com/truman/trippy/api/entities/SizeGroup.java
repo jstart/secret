@@ -22,8 +22,8 @@ public class SizeGroup extends Group<Size> {
 
   @Override
   public Size[] getItems() {
-    return items;
+    return sizes;
   }
   
-  private Size[] items;
+  private Size[] sizes;
 }

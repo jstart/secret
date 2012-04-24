@@ -49,7 +49,17 @@ public class Size implements TrippyEntity {
     return width;
   }
   
+  /**
+   * Returns width
+   * 
+   * @return width
+   */
+  public String getType() {
+    return type;
+  }
+  
   private String url;
   private Integer width;
   private Integer height;
+  private String type;
 }
