@@ -45,15 +45,17 @@ public class YourTripsFragment extends SherlockListFragment{
 		protected void onPostExecute(Result<Trips> result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			if (result.getResult() != null){
+			if (result != null){
+				if (result.getResult() != null){
 
-				Trip[] list = result.getResult().getTrips();
-				for(int i = 0; i< list.length; i++){
-					mActivityList.add(list[i]);
+					Trip[] list = result.getResult().getTrips();
+					for(int i = 0; i< list.length; i++){
+						mActivityList.add(list[i]);
+					}
+					adapter.notifyDataSetChanged();
+				}else{
+					Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 				}
-				adapter.notifyDataSetChanged();
-			}else{
-				Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4);
 			}
 		}
 	}

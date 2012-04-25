@@ -27,8 +27,8 @@
     <string name="my.trips.tab.activity">Activity</string>
 <!-- // PlacesController -->
     <string name="places.no.tips.self">You don\'t have any recommendations or comments from your friends.</string>
-    <string name="places.no.tips.friend">BLANK doesn\'t have any recommendations or comments from BLANK friends.</string>
-    <string name="places.line.stats.both">BLANK BLANK • BLANK BLANK</string>
+    <string name="places.no.tips.friend">%1$s doesn\'t have any recommendations or comments from %2$d friends.</string>
+    <string name="places.line.stats.both">%1$s %2$s \• %3$s %4$s</string>
     <string name="places.line.stats.tip">Comment</string>
     <string name="places.line.stats.tip.plural">Comments</string>
     <string name="places.line.stats.rec">Rec</string>
@@ -40,14 +40,14 @@
     <string name="place.detail.you.recommended.this">You recommended this</string>
 <!-- // TripItineraryController -->
     <string name="trip.itinerary.title">Trip Plan</string>
-    <string name="trip.itinerary.user.trip.to.destination">BLANK trip to \nBLANK</string>
+    <string name="trip.itinerary.user.trip.to.destination">%1$s trip to \n%2$s</string>
     <string name="trip.itinerary.dates.not.set">Dates not set</string>
     <string name="trip.itinerary.places.youre.considering">Considering</string>
     <string name="trip.itinerary.places.hes.considering">Considering</string>
     <string name="trip.itinerary.places.shes.considering">Considering</string>
     <string name="trip.itinerary.places.theyre.considering">Considering</string>
     <string name="trip.itinerary.self.nothing.on.trip.plan">Your trip plan will appear here</string>
-    <string name="trip.itinerary.friend.nothing.on.trip.plan">BLANK doesn\'t have anything on BLANK trip plan yet.</string>
+    <string name="trip.itinerary.friend.nothing.on.trip.plan">%1$s doesn\'t have anything on %2$s trip plan yet.</string>
     <string name="trip.itinerary.error.trip.not.found">This trip is no longer available</string>
     <string name="trip.itinerary.add.to.trip.plan">+ add a place</string>
     <string name="trip.itinerary.add.another.place">+ add another place</string>
@@ -62,7 +62,7 @@
     <string name="nearby.controller.title.add.to.trip.plan">Add to Trip Plan</string>
 <!-- // PhotoAlbumViewerController -->
     <string name="photo.album.viewer.no.photos.self">Take photos and share them with your helpers and friends.</string>
-    <string name="photo.album.viewer.no.photos.friend">BLANK hasn\'t added any photos yet.</string>
+    <string name="photo.album.viewer.no.photos.friend">%s hasn\'t added any photos yet.</string>
     <string name="photo.share.layer.cancel">Cancel</string>
     <string name="photo.share.layer.email">Email</string>
     <string name="photo.share.layer.facebook">Facebook</string>
@@ -73,7 +73,7 @@
 <!-- // PhotoCommentController -->
     <string name="photo.comment.comment.on.photo">Add a comment for this photo</string>
 <!-- // SuggestedHelpersController -->
-    <string name="suggested.helpers.friends.who.know">Friends who know BLANK</string>
+    <string name="suggested.helpers.friends.who.know">Friends who know %s</string>
     <string name="suggested.helpers.all.friends">All Friends</string>
 <!-- // TripDetailController -->
     <string name="trip.detail.title">Trip Details</string>
@@ -98,16 +98,16 @@
 <!-- // TripFeedController (Activity) -->
     <string name="activity.list.item.recommend">Added a recommendation</string>
     <string name="activity.list.item.comment">posted a comment</string>
-    <string name="activity.list.item.like.comment">BLANK likes BLANK comment of BLANK.</string>
-    <string name="activity.list.item.add.trip.details">Added details to BLANK trip</string>
+    <string name="activity.list.item.like.comment">%1$s likes %2$s comment of %3$s.</string>
+    <string name="activity.list.item.add.trip.details">Added details to %s trip</string>
     <string name="activity.list.item.new.trip">created a trip</string>
-    <string name="activity.list.item.add.trip.place.consider">Added to BLANK trip plan</string>
+    <string name="activity.list.item.add.trip.place.consider">Added to %s trip plan</string>
     <string name="activity.list.item.copy.trip">created a trip</string>
     <string name="activity.list.item.upload.photo">posted a photo</string>
-    <string name="activity.list.item.comment.photo">commented on BLANK\'s photo</string>
-    <string name="activity.list.item.like.photo">BLANK liked BLANK\'s photo of BLANK</string>
-    <string name="activity.list.item.like.photo.comment">BLANK liked BLANK\'s comment on BLANK\'s photo of BLANK.</string>
-    <string name="activity.list.item.planner.photo">BLANK photo of BLANK</string>
+    <string name="activity.list.item.comment.photo">commented on %s\'s photo</string>
+    <string name="activity.list.item.like.photo">%1$s liked %2$s\'s photo of %3$s</string>
+    <string name="activity.list.item.like.photo.comment">%1$s liked %2$s\'s comment on %3$s\'s photo of %4$s.</string>
+    <string name="activity.list.item.planner.photo">%1$s photo of %2$s</string>
     <string name="trip.feed.header">Activity</string>
     <string name="activity.no.results.text">Your friends haven\'t been to Trippy yet.</string>
 <!-- // Global Activity Detail -->
@@ -119,9 +119,9 @@
     <string name="action.view.photo.saved">Photo upload complete</string>
     <string name="action.view.comment.saved">Comment Saved</string>
 <!-- // Notifications -->
-    <string name="notification.new.trip.created">BLANK created a new trip to BLANK</string>
+    <string name="notification.new.trip.created">%1$s created a new trip to %2$s</string>
 <!-- // MainMenu -->
-    <string name="menu.profile.header">BLANK</string>
+    <string name="menu.profile.header">%s</string>
     <string name="menu.profile.activity.feed">Activity</string>
     <string name="menu.profile.trips">Trips</string>
     <string name="menu.profile.my.trips">Your Trips</string>

@@ -1324,7 +1324,28 @@ public class TrippyApi {
       throw new TrippyApiException(e);
     }
   }
-  
+  /**
+   * Returns the settings of the acting user. 
+   * 
+   * @see <a href="https://developer.foursquare.com/docs/settings/all.html" target="_blank">https://developer.foursquare.com/docs/settings/all.html</a>
+   * 
+   * @return FBPermissions entity wrapped in Result object
+   * @throws TrippyApiException when something unexpected happens
+   */
+  public Result<Trips> friendTrips(Integer limit, Integer offset, Long afterTimestamp, Long beforeTimestamp) throws TrippyApiException {
+    try {
+      ApiRequestResponse response = doApiRequest(Method.GET, "users/self/friendtrips", false, "limit", limit, "offset", offset, "afterTimestamp", afterTimestamp, "beforeTimestamp", beforeTimestamp);
+      Trips result = null;
+
+      if (response.getMeta().getCode() == 200) {
+        result = (Trips) JSONFieldParser.parseEntity(Trips.class, response.getResponse().getJSONObject("trips"), this.skipNonExistingFields);
+      }
+
+      return new Result<Trips>(response.getMeta(), result);
+    } catch (JSONException e) {
+      throw new TrippyApiException(e);
+    }
+  }  
   /**
    * Returns the settings of the acting user. 
    * 

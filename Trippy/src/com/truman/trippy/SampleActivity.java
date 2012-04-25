@@ -69,7 +69,7 @@ public class SampleActivity extends SherlockFragmentActivity {
 				newFrag = new YourTripsFragment();
 				fragmentMap.put("Your Trips", newFrag);
 			}else if(item.getItemId() == 3){
-				newFrag = new YourTripsFragment();
+				newFrag = new FriendTripsFragment();
 				fragmentMap.put("Friend Trips", newFrag);
 			}
 		}

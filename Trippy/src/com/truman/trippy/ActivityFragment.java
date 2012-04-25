@@ -51,17 +51,20 @@ public class ActivityFragment extends ListFragment{
 		protected void onPostExecute(HashMap<String, Object> result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			Log.d("Trippy", "Count of results:" + ((Result<Activities>)result.get("Activities")).getResult().getActivities().length);
 			mActivityList = new ArrayList<Activity>();
-			if (((Result<Activities>)result.get("Activities")).getResult() != null){
-				Activity[] list = ((Result<Activities>)result.get("Activities")).getResult().getActivities();
-				for (int i = 0; i < list.length; i++){
-					mActivityList.add(list[i]);
+			if (result != null){
+				if (((Result<Activities>)result.get("Activities")).getResult() != null){
+					Log.d("Trippy", "Count of results:" + ((Result<Activities>)result.get("Activities")).getResult().getActivities().length);
+
+					Activity[] list = ((Result<Activities>)result.get("Activities")).getResult().getActivities();
+					for (int i = 0; i < list.length; i++){
+						mActivityList.add(list[i]);
+					}
+					photoMap = ((HashMap<String, Photo>)result.get("Photos"));
+					adapter.notifyDataSetChanged();
+				}else{
+					Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 				}
-				photoMap = ((HashMap<String, Photo>)result.get("Photos"));
-				adapter.notifyDataSetChanged();
-			}else{
-				Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 			}
 		}
 	}
@@ -74,7 +77,7 @@ public class ActivityFragment extends ListFragment{
 				android.R.layout.simple_list_item_1,
 				mActivityList);
 		setListAdapter(adapter);
-		
+
 		//		getListView().setCacheColorHint(0);
 		ColorDrawable divider = new ColorDrawable(this.getResources().getColor(R.color.divider));
 		getListView().setDivider(divider);
@@ -151,6 +154,8 @@ public class ActivityFragment extends ListFragment{
 			}
 			holder = new ViewHolder();
 			holder.text = (TextView)convertView.findViewById(R.id.content);
+			TextView activityText = (TextView)convertView.findViewById(R.id.activity_text);
+			activityText.setText(ActivityFeedHelper.getActivityString(getActivity(), activity));
 			holder.text.setText(username);
 			return convertView;
 		}
