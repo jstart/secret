@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
      >
 
-    <RelativeLayout
+<!--     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="45dip"
         android:paddingLeft="2dip"
@@ -31,11 +31,10 @@
             android:text="Trippy"
             android:textStyle="bold"
             android:gravity="center_horizontal"/>
-    </RelativeLayout>
-    <fragment android:name="com.truman.trippy.ActivityFragment"
+    </RelativeLayout> -->
+    <RelativeLayout android:name="com.truman.trippy.ActivityFragment"
         android:layout_below="@+id/inner_content"
         android:layout_width="fill_parent"
-        android:layout_marginTop="45dip"
         android:layout_height="fill_parent"
         android:id="@+id/inner_list"
     />

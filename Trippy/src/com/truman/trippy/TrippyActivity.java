@@ -11,7 +11,7 @@ import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.FBPermissions;
 
 public class TrippyActivity extends SherlockActivity {
-    
+
     class PermissionsTask extends AsyncTask<Void, Void, Result<FBPermissions>>{
 
     	protected Result<FBPermissions> doInBackground(Void... params) {
@@ -51,5 +51,5 @@ public class TrippyActivity extends SherlockActivity {
 //        PermissionsTask task = new PermissionsTask();
 //		task.execute();
     }
-    
+
 }

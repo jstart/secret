@@ -9,7 +9,6 @@
  */
 package com.truman.trippy.api;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -20,33 +19,31 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.truman.trippy.api.entities.ActionData;
+import com.truman.trippy.api.entities.ActionTrip;
 import com.truman.trippy.api.entities.Activities;
-import com.truman.trippy.api.entities.BadgeSets;
-import com.truman.trippy.api.entities.Trips;
 import com.truman.trippy.api.entities.Category;
 import com.truman.trippy.api.entities.Checkin;
 import com.truman.trippy.api.entities.CheckinGroup;
 import com.truman.trippy.api.entities.Comment;
-import com.truman.trippy.api.entities.User;
-import com.truman.trippy.api.entities.ActionTrip;
 import com.truman.trippy.api.entities.CompleteSpecial;
 import com.truman.trippy.api.entities.CompleteTip;
 import com.truman.trippy.api.entities.CompleteUser;
-import com.truman.trippy.api.entities.Place;
+import com.truman.trippy.api.entities.FBPermissions;
 import com.truman.trippy.api.entities.KeywordGroup;
 import com.truman.trippy.api.entities.LeaderboardItemGroup;
 import com.truman.trippy.api.entities.LinkGroup;
 import com.truman.trippy.api.entities.MiniVenue;
 import com.truman.trippy.api.entities.Photo;
 import com.truman.trippy.api.entities.PhotoGroup;
+import com.truman.trippy.api.entities.Place;
 import com.truman.trippy.api.entities.RecommendationGroup;
 import com.truman.trippy.api.entities.Recommended;
-import com.truman.trippy.api.entities.FBPermissions;
 import com.truman.trippy.api.entities.SpecialGroup;
 import com.truman.trippy.api.entities.TipGroup;
 import com.truman.trippy.api.entities.Todo;
 import com.truman.trippy.api.entities.TodoGroup;
+import com.truman.trippy.api.entities.Trips;
+import com.truman.trippy.api.entities.User;
 import com.truman.trippy.api.entities.UserGroup;
 import com.truman.trippy.api.entities.VenueGroup;
 import com.truman.trippy.api.entities.VenueHistoryGroup;
@@ -67,7 +64,6 @@ import com.truman.trippy.api.io.Response;
  */
 public class TrippyApi {
 
-  private static final String DEFAULT_VERSION = "20110615";
   /**
    * Constructor.
    */

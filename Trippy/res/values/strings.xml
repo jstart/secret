@@ -1,8 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, TrippyActivity!</string>
     <string name="app_name">Trippy</string>
-    <string name="loginString">Login to Trippy</string>
+    <string name="login_string">Login to Trippy</string>
+    <!-- // MyTripsController -->
+    <string name="my.trips.my.trips">Your Trips</string>
+    <string name="my.trips.friend.trips">Friend Trips</string>
+    <string name="my.trips.trip">Trip</string>
+    <string name="my.trips.days">days</string>
+    <string name="my.trips.create.a.trip">Create a trip</string>
+    <string name="my.trips.controller.trips">Trips</string>
+    <string name="my.trips.activity.feed">Activity</string>
+    <string name="my.trips.you.have.no.trips">You don\'t have any trips yet.</string>
+    <string name="my.trips.friends.have.no.trips">Your friends don\'t have any trips yet.</string>
+<!-- // AddTripDestController -->    
+<string name="add.trip.destination">Add a destination</string>
+    <string name="add.trip.dest.title">Create a trip</string>
+    <string name="add.trip.dest.back">Back</string>
+    <string name="add.trip.dest.cancel">Cancel</string>
+<!-- // Tabs    --> 
+	<string name="my.trips.tab.trip.plan">Trip Plan</string>
+    <string name="my.trips.tab.tips">Tips</string>
+    <string name="my.trips.tab.places">Places</string>
+    <string name="my.trips.tab.trip.album">Album</string>
+    <string name="my.trips.tab.share">Share</string>
+    <string name="my.trips.tab.activity">Activity</string>
+<!-- // PlacesController -->
+    <string name="places.no.tips.self">You don't have any recommendations or comments from your friends.</string>
+    <string name="places.no.tips.friend">%@ doesn't have any recommendations or comments from %@ friends.</string>
+    <string name="places.line.stats.both">%@ %@ • %@ %@</string>
+    <string name="places.line.stats.tip">Comment</string>
+    <string name="places.line.stats.tip.plural">Comments</string>
+    <string name="places.line.stats.rec">Rec</string>
+    <string name="places.line.stats.rec.plural">Recs</string>
+    <string name="places.controller.title">Tips</string>
+<!-- // PlaceAddPhotoController -->
+    <string name="places.add.photo.uploading.photo">Uploading Photo</string>
+<!-- // PlaceDetailController -->
+    <string name="place.detail.you.recommended.this">You recommended this</string>
+<!-- // TripItineraryController -->
+    <string name="trip.itinerary.title">Trip Plan</string>
+    <string name="trip.itinerary.user.trip.to.destination">%@ trip to \n%@</string>
+    <string name="trip.itinerary.dates.not.set">Dates not set</string>
+    <string name="trip.itinerary.places.youre.considering">Considering</string>
+    <string name="trip.itinerary.places.hes.considering">Considering</string>
+    <string name="trip.itinerary.places.shes.considering">Considering</string>
+    <string name="trip.itinerary.places.theyre.considering">Considering</string>
+    <string name="trip.itinerary.self.nothing.on.trip.plan">Your trip plan will appear here</string>
+    <string name="trip.itinerary.friend.nothing.on.trip.plan">%@ doesn't have anything on %@ trip plan yet.</string>
+    <string name="trip.itinerary.error.trip.not.found">This trip is no longer available</string>
+    <string name="trip.itinerary.add.to.trip.plan">+ add a place</string>
+    <string name="trip.itinerary.add.another.place">+ add another place</string>
+    <string name="trip.itinerary.no.places.added.yet">No places have been added to the trip plan yet.</string>
+<!-- // NearbyController -->
+    <string name="nearby.location.services.off.title">Location Service Disabled</string>
+    <string name="nearby.location.services.off.body">To re-enable, please go to Settings and turn on Location Service for the Trippy app.</string>
+    <string name="nearby.category.all">All</string>
+    <string name="nearby.controller.finding.location">Finding Location</string>
+    <string name="nearby.controller.title">Places</string>
+    <string name="nearby.controller.title.add.recommendation">Add a Recommendation</string>
+    <string name="nearby.controller.title.add.to.trip.plan">Add to Trip Plan</string>
+<!-- // PhotoAlbumViewerController -->
+    <string name="photo.album.viewer.no.photos.self">Take photos and share them with your helpers and friends.</string>
+    <string name="photo.album.viewer.no.photos.friend">%@ hasn't added any photos yet.</string>
+    <string name="photo.share.layer.cancel">Cancel</string>
+    <string name="photo.share.layer.email">Email</string>
+    <string name="photo.share.layer.facebook">Facebook</string>
+    <string name="photo.share.layer.twitter">Twitter</string>
+    <string name="photo.share.layer.text.message">Text Message</string>
+    <string name="photo.share.layer.text.save.to.album">Save to Album</string>
+    <string name="photo.album.no.photos.have.been.posted.yet"></string>
+<!-- // PhotoCommentController -->
+    <string name="photo.comment.comment.on.photo">Add a comment for this photo</string>
+<!-- // SuggestedHelpersController -->
+    <string name="suggested.helpers.friends.who.know">Friends who know %@</string>
+    <string name="suggested.helpers.all.friends">All Friends</string>
+<!-- // TripDetailController -->
+    <string name="trip.detail.title">Trip Details</string>
+    <string name="trip.detail.title.self">Edit Trip Details</string>
+    <string name="trip.detail.table.start.date">Trip Start Date</string>
+    <string name="trip.detail.table.end.date">Trip End Date</string>
+    <string name="trip.detail.table.types">Trip Types</string>
+    <string name="trip.detail.table.description">Trip Description</string>
+    <string name="trip.detail.start.date">Departure</string>
+    <string name="trip.detail.end.date">Return</string>
+    <string name="trip.detail.table.description.subheader">What would make your trip great?</string>
+<!-- // TripDetailTypeController -->
+    <string name="JUST_GET_AWAY">Just Chillin'</string>
+    <string name="FAMILY">Family</string>
+    <string name="ROMANTIC">Romantic</string>
+    <string name="PET_FRIENDLY">Pet Friendly</string>
+    <string name="BUDGET">Budget</string>
+    <string name="FRIENDS_TRIP">Food and Drink</string>
+    <string name="BUSINESS">Business</string>
+    <string name="ADVENTURE">Adventure</string>
+    <string name="CULTURAL">Cultural</string>
+<!-- // TripFeedController (Activity) -->
+    <string name="activity.list.item.recommend">Added a recommendation</string>
+    <string name="activity.list.item.comment">posted a comment</string>
+    <string name="activity.list.item.like.comment">%@ likes %@ comment of %@.</string>
+    <string name="activity.list.item.add.trip.details">Added details to %@ trip</string>
+    <string name="activity.list.item.new.trip">created a trip</string>
+    <string name="activity.list.item.add.trip.place.consider">Added to %@ trip plan</string>
+    <string name="activity.list.item.copy.trip">created a trip</string>
+    <string name="activity.list.item.upload.photo">posted a photo</string>
+    <string name="activity.list.item.comment.photo">commented on %@'s photo</string>
+    <string name="activity.list.item.like.photo">%@ liked %@'s photo of %@</string>
+    <string name="activity.list.item.like.photo.comment">%@ liked %@'s comment on %@'s photo of %@.</string>
+    <string name="activity.list.item.planner.photo">%@ photo of %@</string>
+    <string name="trip.feed.header">Activity</string>
+    <string name="activity.no.results.text">Your friends haven't been to Trippy yet.</string>
+<!-- // Global Activity Detail -->
+    <string name="global.activity.detail.title">Details</string>
+
+<!-- // ActionViewController -->
+    <string name="action.view.controller.default.comment">Leave a comment</string>
+    <string name="action.view.saving">Saving</string>
+    <string name="action.view.title.planner">Post</string>
+    <string name="action.view.photo.saved">Photo upload complete</string>
+    <string name="action.view.comment.saved">Comment Saved</string>
+<!-- // Notifications -->
+    <string name="notification.new.trip.created">%@ created a new trip to %@</string>
+<!-- // MainMenu -->
+    <string name="menu.profile.header">%@</string>
+    <string name="menu.profile.activity.feed">Activity</string>
+    <string name="menu.profile.trips">Trips</string>
+    <string name="menu.profile.my.trips">Your Trips</string>
+    <string name="menu.profile.friend.trips">Friend Trips</string>
+    <string name="menu.profile.create.trip">Create a Trip</string>
+    <string name="menu.profile.account">Account</string>
+    <string name="menu.profile.logout">Log Out</string>
+    <string name="menu.profile.my.trips.hybrid">My Trips (Hybrid)</string>
+<!-- // TripCommentsController  -->
+    <string name="trip.comments.title">Trip Comments</string>
+    <string name="trip.comments.no.comments.yet">No comments yet.</string>
 
 </resources>

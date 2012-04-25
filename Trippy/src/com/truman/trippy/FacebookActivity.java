@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 import com.facebook.android.DialogError;
 import com.facebook.android.Facebook;
 import com.facebook.android.Facebook.DialogListener;
@@ -22,7 +26,6 @@ public class FacebookActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
 		mPrefs = getPreferences(MODE_PRIVATE);
         String access_token = mPrefs.getString("access_token", null);
         long expires = mPrefs.getLong("access_expires", 0);
@@ -100,6 +103,10 @@ public class FacebookActivity extends SherlockActivity {
     	protected void onPostExecute(Result<User> result) {
     		// TODO Auto-generated method stub
     		super.onPostExecute(result);
+    		if (result != null){}
+    		else{
+    			Toast.makeText(getApplicationContext(), "Could not authenticate with trippy", 4);
+    		}
     		CurrentUser.user = result.getResult();
     		Intent intent = new Intent(FacebookActivity.this, SampleActivity.class);
     		startActivity(intent);
@@ -111,4 +118,5 @@ public class FacebookActivity extends SherlockActivity {
         super.onResume();
         fb.extendAccessTokenIfNeeded(this, null);
     }
+
 }
