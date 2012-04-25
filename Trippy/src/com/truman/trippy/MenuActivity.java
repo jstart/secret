@@ -1,12 +1,12 @@
 package com.truman.trippy;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.korovyansk.android.slideout.SlideoutHelper;
 
-public class MenuActivity extends FragmentActivity{
+public class MenuActivity extends SherlockFragmentActivity{
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

@@ -1,21 +1,18 @@
 package com.truman.trippy;
 
-import com.korovyansk.android.slideout.SlideoutHelper;
-
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class MenuFragment extends ListFragment {
+import com.actionbarsherlock.app.SherlockListFragment;
+
+public class MenuFragment extends SherlockListFragment {
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -31,10 +28,8 @@ public class MenuFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		
-		((MenuActivity)getActivity()).getSlideoutHelper().activate();
-	    getFragmentManager().beginTransaction().add(R.id.slideout_placeholder, new YourTripsFragment(), "YourTrips").commit();
-	    ((MenuActivity)getActivity()).getSlideoutHelper().close();
+        ((MenuActivity)getActivity()).getSlideoutHelper().close();
+
 	}
 private class MenuListAdapter extends ArrayAdapter<String>{
 

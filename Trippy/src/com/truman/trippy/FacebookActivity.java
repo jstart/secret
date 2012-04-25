@@ -1,11 +1,11 @@
 package com.truman.trippy;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.facebook.android.DialogError;
 import com.facebook.android.Facebook;
 import com.facebook.android.Facebook.DialogListener;
@@ -15,7 +15,7 @@ import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.User;
 
-public class FacebookActivity extends Activity {
+public class FacebookActivity extends SherlockActivity {
     Facebook fb = new Facebook("237704586324353");
     private SharedPreferences mPrefs;
 

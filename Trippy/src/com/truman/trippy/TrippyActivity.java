@@ -1,17 +1,16 @@
 package com.truman.trippy;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Window;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.FBPermissions;
 
-public class TrippyActivity extends Activity {
+public class TrippyActivity extends SherlockActivity {
     
     class PermissionsTask extends AsyncTask<Void, Void, Result<FBPermissions>>{
 

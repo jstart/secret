@@ -2,14 +2,14 @@ package com.truman.trippy;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.korovyansk.android.slideout.SlideoutActivity;
 
-public class SampleActivity extends FragmentActivity {
+public class SampleActivity extends SherlockFragmentActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

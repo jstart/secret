@@ -8,7 +8,6 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
@@ -23,7 +23,7 @@ import com.truman.trippy.api.entities.Photo;
 import com.truman.trippy.api.entities.Trip;
 import com.truman.trippy.api.entities.Trips;
 
-public class YourTripsFragment extends ListFragment{
+public class YourTripsFragment extends SherlockListFragment{
 	ArrayList<Trip> mActivityList = new ArrayList<Trip>();
 	ArrayAdapter<Trip> adapter;
 	HashMap<String, Photo> photoMap = new HashMap<String, Photo>();
