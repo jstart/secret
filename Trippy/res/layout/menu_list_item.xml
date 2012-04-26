@@ -3,14 +3,49 @@
     android:layout_height="wrap_content"
     android:background="#333333"
     >
+        <RelativeLayout
+    	  android:id="@+id/profile_image_box"
+    	  android:layout_width="wrap_content" 
+    	  android:layout_height="fill_parent"  
+    	    >
+    	<ImageView 
+    	android:id="@+id/profile_image"
+    	android:layout_width="40dp" 
+        android:layout_height="40dp" 
+        android:padding="5dp"
+         />
+    	<ImageView 
+    	android:layout_toRightOf="@+id/profile_image"
+    	android:id="@+id/spacer"
+    	android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:padding="5dp"
+        android:src="@drawable/feed_thumb_spacer"
+         />
+    	</RelativeLayout>
+    	<RelativeLayout
+    	  android:id="@+id/content_box"
+    	  android:layout_toRightOf="@+id/profile_image_box"
+    	  android:layout_width="wrap_content" 
+    	  android:layout_height="fill_parent" 
+    	  >
         <TextView 
         android:id="@+id/content"
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content" 
-        android:layout_alignParentLeft="true"
-        android:padding="10dp"
+        android:padding="5dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        />
+        android:textColor="@android:color/black"/>
+        <TextView 
+        android:id="@+id/activity_text"
+        android:layout_below="@+id/content"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:textColor="@android:color/black"
+        android:text="posted a photo"/>
+        </RelativeLayout>
 </RelativeLayout> 

@@ -120,35 +120,34 @@ public class ActivityFragment extends ListFragment{
 					convertView.setTag("NONE");
 				}
 			}
-
+			ImageView profile_image_view = (ImageView) convertView.findViewById(R.id.profile_image);
+			// Initialize ImageLoader with configuration. Do it once.
+			ImageLoader imageLoader = ImageLoader.getInstance();
+			// Create configuration for ImageLoader
+			ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity().getApplicationContext())
+			.maxImageWidthForMemoryCache(800)
+			.maxImageHeightForMemoryCache(800)
+			.httpConnectTimeout(5000)
+			.httpReadTimeout(30000)
+			.threadPoolSize(5)
+			.threadPriority(Thread.MIN_PRIORITY + 2)
+			.denyCacheImageMultipleSizesInMemory()
+			.defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+			.build();
+			DisplayImageOptions options = new DisplayImageOptions.Builder()
+			.showStubImage(R.drawable.ic_launcher)
+			.showImageForEmptyUrl(R.drawable.facebook_icon)
+			.cacheInMemory()
+			.cacheOnDisc()
+			.decodingType(DecodingType.MEMORY_SAVING)
+			.build();
+			// Initialize ImageLoader with created configuration. Do it once.
+			imageLoader.init(config);
+			// Load and display image asynchronously
+			imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view,options);
+			
 			if (group.equalsIgnoreCase("PHOTO")){
-				ImageView profile_image_view = (ImageView) convertView.findViewById(R.id.profile_image);
 				ImageView activity_image_view = (ImageView) convertView.findViewById(R.id.activity_image);
-
-				// Initialize ImageLoader with configuration. Do it once.
-				ImageLoader imageLoader = ImageLoader.getInstance();
-				// Create configuration for ImageLoader
-				ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity().getApplicationContext())
-				.maxImageWidthForMemoryCache(800)
-				.maxImageHeightForMemoryCache(800)
-				.httpConnectTimeout(5000)
-				.httpReadTimeout(30000)
-				.threadPoolSize(5)
-				.threadPriority(Thread.MIN_PRIORITY + 2)
-				.denyCacheImageMultipleSizesInMemory()
-				.defaultDisplayImageOptions(DisplayImageOptions.createSimple())
-				.build();
-				DisplayImageOptions options = new DisplayImageOptions.Builder()
-				.showStubImage(R.drawable.ic_launcher)
-				.showImageForEmptyUrl(R.drawable.facebook_icon)
-				.cacheInMemory()
-				.cacheOnDisc()
-				.decodingType(DecodingType.MEMORY_SAVING)
-				.build();
-				// Initialize ImageLoader with created configuration. Do it once.
-				imageLoader.init(config);
-				// Load and display image asynchronously
-				imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view,options);
 				Size[] sizeArray = ((Photo)photoMap.get(activity.getId())).getSizes();
 				imageLoader.displayImage(sizeArray[4].getUrl(), activity_image_view, options);
 			}
