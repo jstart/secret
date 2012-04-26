@@ -5,12 +5,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.apphance.android.Apphance;
 import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.FBPermissions;
 
 public class TrippyActivity extends SherlockActivity {
+    public static final String APP_KEY = "390f3383f3ef06697963e437ca940ad871a5fe3e";
 
     class PermissionsTask extends AsyncTask<Void, Void, Result<FBPermissions>>{
 
@@ -40,6 +42,7 @@ public class TrippyActivity extends SherlockActivity {
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Apphance.startNewSession(this, APP_KEY, Apphance.Mode.Silent);
         setContentView(R.layout.main);
         String permissions = "friends_location,friends_education_history,friends_work_history,friends_hometown,friends_checkins,email,publish_stream,offline_access";
         Intent intent = new Intent(TrippyActivity.this, FacebookActivity.class);

@@ -7,19 +7,19 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import com.apphance.android.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.markupartist.android.widget.PullToRefreshListView;
+import com.markupartist.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.nostra13.universalimageloader.core.DecodingType;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -33,9 +33,10 @@ import com.truman.trippy.api.entities.Photo;
 import com.truman.trippy.api.entities.Size;
 
 public class ActivityFragment extends SherlockListFragment{
-	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
+	ArrayList<Activity> mActivityList = new ArrayList<Activity>(1);
 	ArrayAdapter<Activity> adapter;
 	HashMap<String, Photo> photoMap = new HashMap<String, Photo>();
+	PullToRefreshListView mList = null;
 	class ActivityFeedTask extends AsyncTask<Void, Void, HashMap<String, Object>>{
 
 		protected HashMap<String, Object> doInBackground(Void... params) {
@@ -67,29 +68,50 @@ public class ActivityFragment extends SherlockListFragment{
 				}else{
 					Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 				}
+//				mList.onRefreshComplete();
 			}
 		}
 	}
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		ActivityFeedTask task = new ActivityFeedTask();
-		task.execute();
 		adapter=new ActivityListAdapter(getActivity(),
 				android.R.layout.simple_list_item_1,
 				mActivityList);
 		setListAdapter(adapter);
-
-		//		getListView().setCacheColorHint(0);
+		new ActivityFeedTask().execute();
+		
 		ColorDrawable divider = new ColorDrawable(this.getResources().getColor(R.color.divider));
 		getListView().setDivider(divider);
 		getListView().setDividerHeight(1);
+		// Set a listener to be invoked when the list should be refreshed.
+		
+//		mList.setOnRefreshListener(new OnRefreshListener() {
+//			@Override
+//			public void onRefresh() {
+//				// Do work to refresh the list here.
+//				new ActivityFeedTask().execute();
+//			}
+//		});
+//
+//		mList.prepareForRefresh();
+//		mList.onRefresh();
 	}
+
+//	@Override
+//	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//			Bundle savedInstanceState) {
+//
+//		View root = inflater.inflate(R.layout.pull_to_refresh_list_view, null);
+//		mList = (PullToRefreshListView)root.findViewById(android.R.id.list);
+//
+//		return root;
+//	}
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		//		((MenuActivity)getActivity()).getSlideoutHelper().close();
+		Toast.makeText(getActivity(), "Clicked", 2).show();
 	}
 	private class ActivityListAdapter extends ArrayAdapter<Activity>{
 
@@ -99,11 +121,11 @@ public class ActivityFragment extends SherlockListFragment{
 			super(context, textViewResourceId, objects);
 			// TODO Auto-generated constructor stub
 		}
-
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder holder;
 			Activity activity = getItem(position);
+			if(activity.getUser()!=null){
 			String group = activity.getActionGroup().replaceAll(" ", "");
 			String username = activity.getUser().getUsername();
 			if(convertView == null || !((String)convertView.getTag()).equalsIgnoreCase(group)){
@@ -147,17 +169,23 @@ public class ActivityFragment extends SherlockListFragment{
 			imageLoader.init(config);
 			// Load and display image asynchronously
 			imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view,options);
-			
+
 			if (group.equalsIgnoreCase("PHOTO")){
 				ImageView activity_image_view = (ImageView) convertView.findViewById(R.id.activity_image);
 				Size[] sizeArray = ((Photo)photoMap.get(activity.getId())).getSizes();
 				imageLoader.displayImage(sizeArray[4].getUrl(), activity_image_view, options);
 			}
+			
 			holder = new ViewHolder();
 			holder.text = (TextView)convertView.findViewById(R.id.content);
 			TextView activityText = (TextView)convertView.findViewById(R.id.activity_text);
 			activityText.setText(ActivityFeedHelper.getActivityString(getActivity(), activity));
 			holder.text.setText(username);
+			}else{
+				LayoutInflater inflater = LayoutInflater.from(this.getContext());
+
+				convertView = inflater.inflate(R.layout.menu_list_item, parent, false);
+			}
 			return convertView;
 		}
 

@@ -1,0 +1,3 @@
+[submodule "pulltorefresh"]
+	path = pulltorefresh
+	url = https://github.com/johannilsson/android-pulltorefresh.git

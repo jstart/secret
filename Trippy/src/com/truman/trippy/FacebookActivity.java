@@ -103,11 +103,12 @@ public class FacebookActivity extends SherlockActivity {
     	protected void onPostExecute(Result<User> result) {
     		// TODO Auto-generated method stub
     		super.onPostExecute(result);
-    		if (result != null){}
-    		else{
-    			Toast.makeText(getApplicationContext(), "Could not authenticate with trippy", 4);
+    		if (result != null){
+        		CurrentUser.user = result.getResult();
     		}
-    		CurrentUser.user = result.getResult();
+    		else{
+    			Toast.makeText(getApplicationContext(), "Could not authenticate with trippy", 4).show();
+    		}
     		Intent intent = new Intent(FacebookActivity.this, SampleActivity.class);
     		startActivity(intent);
     		finish();
