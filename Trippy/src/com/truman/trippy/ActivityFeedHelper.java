@@ -19,15 +19,15 @@ class ActivityFeedHelper {
 	    } 
 	    
 	    else if (activity.getActionType().equalsIgnoreCase("ADD_TRIP_PLACE_CONSIDER")) {
-	        return context.getResources().getString(R.string.activity_list_item_add_trip_place_consider, activity.getUser().getGender());
+	        return context.getResources().getString(R.string.activity_list_item_add_trip_place_consider, ActivityFeedHelper.possesiveForGender(activity.getUser().getGender()));
 	    } 
 
 	    else if (activity.getActionType().equalsIgnoreCase("COPY_TRIP_PLACE")) {
-	        return context.getResources().getString(R.string.activity_list_item_add_trip_place_consider, activity.getUser().getGender());
+	        return context.getResources().getString(R.string.activity_list_item_add_trip_place_consider, ActivityFeedHelper.possesiveForGender(activity.getUser().getGender()));
 	    } 
 	    
 	    else if (activity.getActionType().equalsIgnoreCase("ADD_TRIP_DETAILS")) {
-	        return context.getResources().getString(R.string.activity_list_item_add_trip_details, activity.getUser().getGender());
+	        return context.getResources().getString(R.string.activity_list_item_add_trip_details, ActivityFeedHelper.possesiveForGender(activity.getUser().getGender()));
 	    } 
 	    
 	    else if (activity.getActionType().equalsIgnoreCase("UPLOAD_PHOTO")) {
@@ -61,5 +61,15 @@ class ActivityFeedHelper {
 	        
 	        return new String("Line 1: "+ activity.getActionGroup());
 	    }
+	}
+	
+	static String possesiveForGender(String gender){
+		if (gender.equalsIgnoreCase("Male")){
+			return "his";
+		}
+		else if(gender.equalsIgnoreCase("Female")){
+			return "her";
+		}
+		return "invalid gender";
 	}
 }
