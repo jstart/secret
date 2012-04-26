@@ -94,7 +94,7 @@ public class YourTripsFragment extends SherlockListFragment{
 			Trip trip = getItem(position);
 			if(convertView == null){
 				LayoutInflater inflater = LayoutInflater.from(this.getContext());	            	
-				convertView = inflater.inflate(R.layout.activity_photo_row, parent, false);
+				convertView = inflater.inflate(R.layout.menu_list_item, parent, false);
 
 				holder = new ViewHolder();
 
@@ -104,7 +104,8 @@ public class YourTripsFragment extends SherlockListFragment{
 			}else{
 				holder = (ViewHolder) convertView.getTag();
 			}
-
+			TextView activityText = (TextView)convertView.findViewById(R.id.activity_text);
+			activityText.setText("");
 			holder.text.setText(trip.getPlace().getName());
 			return convertView;
 		}

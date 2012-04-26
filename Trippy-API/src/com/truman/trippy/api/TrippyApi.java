@@ -1657,8 +1657,8 @@ public class TrippyApi {
 	private String facebookExpirationDate;
 	private IOHandler ioHandler;
 	private boolean useCallback = false;
-//	private static final String apiUrl = "https://api.trippy.com/v1/";
-	private static final String apiUrl = "https://api.qa.trippy.com/v1/";
+	private static final String apiUrl = "https://api.trippy.com/v1/";
+//	private static final String apiUrl = "https://api.qa.trippy.com/v1/";
 	/**
 	 * Class that holds API request response
 	 * 

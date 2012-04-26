@@ -7,7 +7,6 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +14,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.nostra13.universalimageloader.core.DecodingType;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -30,7 +32,7 @@ import com.truman.trippy.api.entities.Activity;
 import com.truman.trippy.api.entities.Photo;
 import com.truman.trippy.api.entities.Size;
 
-public class ActivityFragment extends ListFragment{
+public class ActivityFragment extends SherlockListFragment{
 	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
 	ArrayAdapter<Activity> adapter;
 	HashMap<String, Photo> photoMap = new HashMap<String, Photo>();
@@ -135,8 +137,8 @@ public class ActivityFragment extends ListFragment{
 			.defaultDisplayImageOptions(DisplayImageOptions.createSimple())
 			.build();
 			DisplayImageOptions options = new DisplayImageOptions.Builder()
-			.showStubImage(R.drawable.ic_launcher)
-			.showImageForEmptyUrl(R.drawable.facebook_icon)
+			.showStubImage(R.drawable.feed_placeholder_photo)
+			.showImageForEmptyUrl(R.drawable.feed_placeholder_photo)
 			.cacheInMemory()
 			.cacheOnDisc()
 			.decodingType(DecodingType.MEMORY_SAVING)
