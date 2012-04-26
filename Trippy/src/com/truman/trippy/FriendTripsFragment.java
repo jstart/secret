@@ -25,7 +25,7 @@ import com.truman.trippy.api.entities.Trip;
 import com.truman.trippy.api.entities.Trips;
 
 public class FriendTripsFragment extends SherlockListFragment{
-	ArrayList<Trip> mActivityList = new ArrayList<Trip>();
+	ArrayList<Trip> mTripList = new ArrayList<Trip>();
 	ArrayAdapter<Trip> adapter;
 	HashMap<String, Photo> photoMap = new HashMap<String, Photo>();
 	class FriendTripsTask extends AsyncTask<Void, Void, Result<Trips>>{
@@ -47,10 +47,10 @@ public class FriendTripsFragment extends SherlockListFragment{
 			super.onPostExecute(result);
 			if (result != null){
 				if (result.getResult() != null){
-
+					mTripList.clear();
 					Trip[] list = result.getResult().getTrips();
 					for(int i = 0; i< list.length; i++){
-						mActivityList.add(list[i]);
+						mTripList.add(list[i]);
 					}
 					adapter.notifyDataSetChanged();
 				}else{
@@ -66,7 +66,7 @@ public class FriendTripsFragment extends SherlockListFragment{
 		task.execute();
 		adapter=new FriendTripsListAdapter(getActivity(),
 				android.R.layout.simple_list_item_1,
-				mActivityList);
+				mTripList);
 		setListAdapter(adapter);
 		//		getListView().setCacheColorHint(0);
 		ColorDrawable divider = new ColorDrawable(this.getResources().getColor(R.color.divider));

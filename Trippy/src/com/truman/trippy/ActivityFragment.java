@@ -53,7 +53,7 @@ public class ActivityFragment extends SherlockListFragment{
 		protected void onPostExecute(HashMap<String, Object> result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			mActivityList = new ArrayList<Activity>();
+			mActivityList.clear();
 			if (result != null){
 				if (((Result<Activities>)result.get("Activities")).getResult() != null){
 					Log.d("Trippy", "Count of results:" + ((Result<Activities>)result.get("Activities")).getResult().getActivities().length);
