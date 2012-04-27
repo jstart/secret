@@ -38,23 +38,30 @@ public class ActivityFragment extends SherlockListFragment{
 	ImageLoader mImageLoader;
 	DisplayImageOptions mOptions;
 	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
-	ArrayAdapter<Activity> adapter;
+	ArrayAdapter<Activity> mAdapter;
 	HashMap<String, Photo> mPhotoMap = new HashMap<String, Photo>();
 	PullToRefreshListView mList = null;
 	Integer mOffset = 0;
+	Integer mTotalActivityCount = 1;
 	class ActivityFeedTask extends AsyncTask<Integer, Void, HashMap<String, Object>>{
 
 		protected HashMap<String, Object> doInBackground(Integer... params) {
 			TrippyApi api = new TrippyApi();
 			HashMap<String, Object> set = null;
 			Integer offset = params[0];
-			try {
-				set = api.activityFeed(null, 20, offset, null, null);
-			} catch (TrippyApiException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}        
-			return set;
+			if (!(offset >= mTotalActivityCount)){
+				Log.d(getTag(),"requesting activity feed with offset " +offset);
+
+				try {
+					set = api.activityFeed(null, 20, offset, null, null);
+				} catch (TrippyApiException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}   
+				return set;
+			}else{
+				return null;
+			}
 		}
 		protected void onPostExecute(HashMap<String, Object> result) {
 			// TODO Auto-generated method stub
@@ -62,10 +69,16 @@ public class ActivityFragment extends SherlockListFragment{
 			if(mOffset == 0){
 				mActivityList.clear();
 				mPhotoMap.clear();
+				mList.setPullToRefreshEnabled(true);
+				if (result != null){
+					mTotalActivityCount = ((Result<Activities>)result.get("Activities")).getResult().getCount();
+					Log.d(getTag(),"Clearing activity, total activity available is " + mTotalActivityCount);
+				}
+
 			}
 			if (result != null){
 				if (((Result<Activities>)result.get("Activities")).getResult() != null){
-					Log.d(getTag(), "Count of results:" + ((Result<Activities>)result.get("Activities")).getResult().getActivities().length);
+					Log.d(getTag(), "Count of results:" + ((Result<Activities>)result.get("Activities")).getResult().getActivities().length +" Count of list adapter items " + mActivityList.size());
 
 					Activity[] list = ((Result<Activities>)result.get("Activities")).getResult().getActivities();
 					mOffset += list.length;
@@ -73,22 +86,32 @@ public class ActivityFragment extends SherlockListFragment{
 						mActivityList.add(list[i]);
 					}
 					mPhotoMap.putAll(((HashMap<String, Photo>)result.get("Photos")));
-					adapter.notifyDataSetChanged();
+					mAdapter.notifyDataSetChanged();
+					mList.refreshDrawableState();
+					mList.getRefreshableView().requestLayout();
 					mList.onRefreshComplete();
 				}else{
 					Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 					mList.onRefreshComplete();
 				}
+				if(mOffset == mTotalActivityCount){
+					mList.setPullToRefreshEnabled(false);
+				}
+			}
+			else{
+				Log.d(getTag(),"Paged through " + mTotalActivityCount + "activity items.");
+				mList.onRefreshComplete();
+				mList.setPullToRefreshEnabled(false);
 			}
 		}
 	}
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		adapter=new ActivityListAdapter(getActivity(),
+		mAdapter=new ActivityListAdapter(getActivity(),
 				android.R.layout.simple_list_item_1,
 				mActivityList);
-		mList.getRefreshableView().setAdapter(adapter);
+		mList.getRefreshableView().setAdapter(mAdapter);
 		mList.setFooterPullLabel("Pull for more...");
 		mList.setFooterRefreshingLabel("Retrieving activities...");
 		mList.setFooterReleaseLabel("Release for more...");
@@ -109,18 +132,9 @@ public class ActivityFragment extends SherlockListFragment{
 			public void onPullUpToRefresh() {
 				new ActivityFeedTask().execute(mOffset);
 			}
-			
-		});
-		mList.setOnLastItemVisibleListener(new OnLastItemVisibleListener() {
 
-			@Override
-			public void onLastItemVisible() {
-				// TODO Auto-generated method stub
-				adapter.notifyDataSetChanged();
-			}
-			
 		});
-		
+
 		// Initialize ImageLoader with configuration. Do it once.
 		mImageLoader = ImageLoader.getInstance();
 		// Create configuration for ImageLoader

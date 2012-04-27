@@ -135,7 +135,7 @@ public class YourTripsFragment extends SherlockListFragment{
 				holder.activityText.setText("");
 			}
 			holder.text.setText(trip.getPlace().getName());
-			mImageLoader.displayImage(trip.getUser().getImageSource(), holder.imageView, mOptions);
+			mImageLoader.displayImage(trip.getPlace().getImageSource(), holder.imageView, mOptions);
 			return convertView;
 		}
 
