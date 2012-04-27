@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -27,9 +26,6 @@
         <activity android:name="FacebookActivity" android:screenOrientation="portrait" android:launchMode="standard"></activity>
         <activity android:name="MenuActivity"></activity>
         <activity android:name="SampleActivity"></activity>
-        <activity android:name="com.apphance.android.ui.LoginActivity" android:configChanges="orientation"
-android:launchMode="singleInstance" />
-<activity android:name="com.apphance.android.ui.ProblemActivity" android:configChanges="orientation" android:launchMode="singleInstance" />
     </application>
 
 </manifest>
