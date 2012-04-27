@@ -65,6 +65,15 @@ public class Place implements TrippyEntity {
   public String getName() {
     return name;
   }
+  
+  /**
+   * Returns name
+   * 
+   * @return name
+   */
+  public String getImageSource() {
+    return imageSource;
+  }
 
   /**
    * Returns latitude
@@ -88,6 +97,7 @@ public class Place implements TrippyEntity {
   private String city;
   private Boolean featured;
   private String name;
+  private String imageSource;
   private Double lat;
   private Double lng;
   private String provider;

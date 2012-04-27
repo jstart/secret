@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="60" android:versionName="4.0.2" package="com.truman.trippy">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.truman.trippy"
+    android:versionCode="1"
+    android:versionName="0.1" >
 
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="15" />
 
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="15"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" android:theme="@style/Theme.Styled">
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Styled" >
         <activity
             android:name=".TrippyActivity"
             android:label="@string/app_name" >
@@ -23,9 +30,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="FacebookActivity" android:screenOrientation="portrait" android:launchMode="standard"></activity>
-        <activity android:name="MenuActivity"></activity>
-        <activity android:name="SampleActivity"></activity>
+        <activity
+            android:name="FacebookActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="MenuActivity" >
+        </activity>
+        <activity android:name="SampleActivity" >
+        </activity>
+
+        <activity
+            android:name="com.apphance.android.ui.LoginActivity"
+            android:launchMode="singleInstance" >
+        </activity>
+        <activity
+            android:name="com.apphance.android.ui.ProblemActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleInstance" >
+        </activity>
     </application>
 
 </manifest>

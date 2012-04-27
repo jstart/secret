@@ -24,7 +24,8 @@ public class SampleActivity extends SherlockFragmentActivity {
 		mFrag = new ActivityFragment();
 		fragmentMap.put("Activity", mFrag);
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		ft.setCustomAnimations(R.anim.slide_in, R.anim.slide);
+//		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		ft.replace(R.id.inner_list, mFrag);
 		ft.commit();
 		//		findViewById(R.id.sample_button).setOnClickListener(

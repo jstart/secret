@@ -1,12 +1,13 @@
-package com.truman.trippy;
+package com.truman.trippy.helper;
 
 import android.content.Context;
 
+import com.truman.trippy.R;
 import com.truman.trippy.api.entities.Activity;
 
-class ActivityFeedHelper {
+public class ActivityFeedHelper {
 
-	static String getActivityString(Context context, Activity activity){
+	public static String getActivityString(Context context, Activity activity){
 		if (activity.getActionType().equalsIgnoreCase("NEW_TRIP")) {
 	        return  context.getResources().getString(R.string.activity_list_item_new_trip);
 	    } 

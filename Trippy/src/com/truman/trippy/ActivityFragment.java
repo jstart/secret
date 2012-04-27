@@ -25,6 +25,7 @@ import com.nostra13.universalimageloader.core.DecodingType;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.truman.trippy.helper.*;
 import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
@@ -34,6 +35,8 @@ import com.truman.trippy.api.entities.Photo;
 import com.truman.trippy.api.entities.Size;
 
 public class ActivityFragment extends SherlockListFragment{
+	ImageLoader mImageLoader;
+	DisplayImageOptions mOptions;
 	ArrayList<Activity> mActivityList = new ArrayList<Activity>();
 	ArrayAdapter<Activity> adapter;
 	HashMap<String, Photo> mPhotoMap = new HashMap<String, Photo>();
@@ -117,6 +120,29 @@ public class ActivityFragment extends SherlockListFragment{
 			}
 			
 		});
+		
+		// Initialize ImageLoader with configuration. Do it once.
+		mImageLoader = ImageLoader.getInstance();
+		// Create configuration for ImageLoader
+		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity().getApplicationContext())
+		.maxImageWidthForMemoryCache(800)
+		.maxImageHeightForMemoryCache(800)
+		.httpConnectTimeout(5000)
+		.httpReadTimeout(30000)
+		.threadPoolSize(1)
+		.threadPriority(Thread.MIN_PRIORITY)
+		.denyCacheImageMultipleSizesInMemory()
+		.defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+		.build();
+		mOptions = new DisplayImageOptions.Builder()
+		.showStubImage(R.drawable.feed_placeholder_photo)
+		.showImageForEmptyUrl(R.drawable.feed_placeholder_photo)
+		.cacheInMemory()
+		.cacheOnDisc()
+		.decodingType(DecodingType.FAST)
+		.build();
+		// Initialize ImageLoader with created configuration. Do it once.
+		mImageLoader.init(config);
 	}
 
 	@Override
@@ -166,35 +192,14 @@ public class ActivityFragment extends SherlockListFragment{
 					}
 				}
 				ImageView profile_image_view = (ImageView) convertView.findViewById(R.id.profile_image);
-				// Initialize ImageLoader with configuration. Do it once.
-				ImageLoader imageLoader = ImageLoader.getInstance();
-				// Create configuration for ImageLoader
-				ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity().getApplicationContext())
-				.maxImageWidthForMemoryCache(800)
-				.maxImageHeightForMemoryCache(800)
-				.httpConnectTimeout(5000)
-				.httpReadTimeout(30000)
-				.threadPoolSize(5)
-				.threadPriority(Thread.MIN_PRIORITY + 2)
-				.denyCacheImageMultipleSizesInMemory()
-				.defaultDisplayImageOptions(DisplayImageOptions.createSimple())
-				.build();
-				DisplayImageOptions options = new DisplayImageOptions.Builder()
-				.showStubImage(R.drawable.feed_placeholder_photo)
-				.showImageForEmptyUrl(R.drawable.feed_placeholder_photo)
-				.cacheInMemory()
-				.cacheOnDisc()
-				.decodingType(DecodingType.MEMORY_SAVING)
-				.build();
-				// Initialize ImageLoader with created configuration. Do it once.
-				imageLoader.init(config);
+
 				// Load and display image asynchronously
-				imageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view,options);
+				mImageLoader.displayImage(activity.getUser().getImageSource(), profile_image_view,mOptions);
 
 				if (group.equalsIgnoreCase("PHOTO")){
 					ImageView activity_image_view = (ImageView) convertView.findViewById(R.id.activity_image);
 					Size[] sizeArray = ((Photo)mPhotoMap.get(activity.getId())).getSizes();
-					imageLoader.displayImage(sizeArray[4].getUrl(), activity_image_view, options);
+					mImageLoader.displayImage(sizeArray[4].getUrl(), activity_image_view, mOptions);
 				}
 
 				holder = new ViewHolder();

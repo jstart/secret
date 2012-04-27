@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content"
-    android:background ="#FFFFFF"
+    android:background ="#333333"
     android:clickable="false">
     	<RelativeLayout
     	  android:id="@+id/profile_image_box"
@@ -36,7 +36,7 @@
         android:padding="5dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/white"/>
         <TextView 
         android:id="@+id/activity_text"
         android:layout_below="@+id/content"
@@ -45,7 +45,7 @@
         android:padding="5dp"
         android:textSize="16sp"
         android:textStyle="normal"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/tertiary_text_light"
         android:text="posted a photo"/>
         <ImageView 
         android:layout_below="@+id/activity_text"

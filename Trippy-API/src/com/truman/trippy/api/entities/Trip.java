@@ -99,8 +99,35 @@ public class Trip implements TrippyEntity {
    * 
    * @return string representation of creation date.
    */
+  public Integer getTripDuration() {
+	    return tripDuration;
+	  }
+  
+  /**
+   * Returns string representation of creation date.
+   * 
+   * @return string representation of creation date.
+   */
   public User getUser() {
     return user;
+  }
+  
+  /**
+   * Returns string representation of creation date.
+   * 
+   * @return string representation of creation date.
+   */
+  public Integer getTripYear() {
+    return tripYear;
+  }
+  
+  /**
+   * Returns string representation of creation date.
+   * 
+   * @return string representation of creation date.
+   */
+  public Integer getTripMonth() {
+    return tripMonth;
   }
   
   private String id;
@@ -112,5 +139,8 @@ public class Trip implements TrippyEntity {
   private Place place;
   private String startDate;
   private String endDate;
+  private Integer tripDuration;
   private User user;
+  private Integer tripYear;
+  private Integer tripMonth;
 }

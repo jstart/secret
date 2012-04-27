@@ -10,10 +10,12 @@ import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
 import com.truman.trippy.api.TrippyApiException;
 import com.truman.trippy.api.entities.FBPermissions;
+import com.zubhium.ZubhiumSDK;
+import com.zubhium.ZubhiumSDK.CrashReportingMode;
 
 public class TrippyActivity extends SherlockActivity {
     public static final String APP_KEY = "390f3383f3ef06697963e437ca940ad871a5fe3e";
-
+    ZubhiumSDK sdk;
     class PermissionsTask extends AsyncTask<Void, Void, Result<FBPermissions>>{
 
     	protected Result<FBPermissions> doInBackground(Void... params) {
@@ -42,6 +44,12 @@ public class TrippyActivity extends SherlockActivity {
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sdk = ZubhiumSDK.getZubhiumSDKInstance(getApplicationContext() ,"ec36da0a4e3fc321399b3fcad985c8");
+        
+        if(sdk != null){
+         	sdk.setCrashReportingMode(CrashReportingMode.SILENT);
+         }
+
         Apphance.startNewSession(this, APP_KEY, Apphance.Mode.QA);
         Apphance.setReportOnShakeEnabled(true);
         setContentView(R.layout.main);
