@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.apphance.android.Log;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.nostra13.universalimageloader.core.DecodingType;
@@ -70,6 +71,7 @@ public class ActivityFragment extends SherlockListFragment{
 					}
 					mPhotoMap.putAll(((HashMap<String, Photo>)result.get("Photos")));
 					adapter.notifyDataSetChanged();
+					mList.onRefreshComplete();
 				}else{
 					Toast.makeText(getActivity().getApplicationContext(), "Could not retrieve activity feed", 4).show();
 					mList.onRefreshComplete();
@@ -84,6 +86,9 @@ public class ActivityFragment extends SherlockListFragment{
 				android.R.layout.simple_list_item_1,
 				mActivityList);
 		mList.getRefreshableView().setAdapter(adapter);
+		mList.setFooterPullLabel("Pull for more...");
+		mList.setFooterRefreshingLabel("Retrieving activities...");
+		mList.setFooterReleaseLabel("Release for more...");
 		new ActivityFeedTask().execute(mOffset);
 
 		ColorDrawable divider = new ColorDrawable(this.getResources().getColor(R.color.divider));
@@ -101,6 +106,16 @@ public class ActivityFragment extends SherlockListFragment{
 			public void onPullUpToRefresh() {
 				new ActivityFeedTask().execute(mOffset);
 			}
+			
+		});
+		mList.setOnLastItemVisibleListener(new OnLastItemVisibleListener() {
+
+			@Override
+			public void onLastItemVisible() {
+				// TODO Auto-generated method stub
+				adapter.notifyDataSetChanged();
+			}
+			
 		});
 	}
 
@@ -191,10 +206,6 @@ public class ActivityFragment extends SherlockListFragment{
 				LayoutInflater inflater = LayoutInflater.from(this.getContext());
 
 				convertView = inflater.inflate(R.layout.menu_list_item, parent, false);
-			}
-			Log.d(getTag(), "Current offset and position "+mOffset + " " +position);
-			if(position == mOffset){
-				mList.onRefreshComplete();
 			}
 			return convertView;
 		}
