@@ -119,5 +119,15 @@ public class FacebookActivity extends SherlockActivity {
         super.onResume();
         fb.extendAccessTokenIfNeeded(this, null);
     }
-
+    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		SubMenu sub = menu.addSubMenu("");
+		sub.setIcon(R.drawable.main_menu_icon);
+		sub.add(0, 1, 0, "Activity");
+		sub.add(0, 2, 0, "Your Trips");
+		sub.add(0, 3, 0, "Friend Trips");
+		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		return true;
+	}
 }

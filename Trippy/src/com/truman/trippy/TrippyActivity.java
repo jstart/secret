@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 import com.apphance.android.Apphance;
 import com.truman.trippy.api.Result;
 import com.truman.trippy.api.TrippyApi;
@@ -63,5 +66,14 @@ public class TrippyActivity extends SherlockActivity {
 //        PermissionsTask task = new PermissionsTask();
 //		task.execute();
     }
-
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		SubMenu sub = menu.addSubMenu("");
+		sub.setIcon(R.drawable.main_menu_icon);
+		sub.add(0, 1, 0, "Activity");
+		sub.add(0, 2, 0, "Your Trips");
+		sub.add(0, 3, 0, "Friend Trips");
+		sub.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		return true;
+	}
 }
